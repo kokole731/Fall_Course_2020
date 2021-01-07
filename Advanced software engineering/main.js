@@ -24,9 +24,6 @@ function cons(obj, list) {
     }
 }
 
-console.log("CHAPTER 3")
-console.log()
-
 function foldr(f, x) {
     return function(list) {
         if (list == null) {
@@ -44,10 +41,6 @@ function multiply(a, b) {
     return a*b
 }
 
-console.log("product(tolist([1, 2, 3]))")
-console.log(product(tolist([1, 2, 3])))
-console.log()
-
 function anytrue(list) {
     return foldr(or, false)(list)
 }
@@ -56,9 +49,6 @@ function or(a, b) {
     return a||b
 }
 
-console.log("anytrue(tolist([true, false, false]))")
-console.log(anytrue(tolist([true, false, false])))
-console.log()
 
 function length(list) {
     return foldr(count, 0)(list)
@@ -68,9 +58,6 @@ function count(a, n) {
     return n+1
 }
 
-console.log("length(tolist([1, 2, 3]))")
-console.log(length(tolist([1, 2, 3])))
-console.log()
 
 function doubleall(list) {
     return map(double)(list)
@@ -96,9 +83,6 @@ function dot(f1, f2) {
     }
 }
 
-console.log("fromlist(doubleall(tolist([1, 2, 3])))")
-console.log(fromlist(doubleall(tolist([1, 2, 3]))))
-console.log()
 
 function sum(list) {
     return foldr(add, 0)(list)
@@ -108,12 +92,6 @@ function add(a, b) {
     return a+b
 }
 
-console.log("sum(tolist([1, 2, 3]))")
-console.log(sum(tolist([1, 2, 3])))
-console.log()
-
-console.log("CHAPTER 4")
-console.log()
 
 function next(n) {
     return function(x) {
@@ -140,9 +118,6 @@ function sqrt(a0, eps, n) {
     return within(eps, repeat(next(n), a0, 0))
 }
 
-console.log("sqrt(2, 1, 4)")
-console.log(sqrt(2, 0.01, 10))
-console.log()
 
 function easydiff(f, x) {
     return function(h) {
@@ -166,10 +141,10 @@ function square(x) {
     return x*x
 }
 
-console.log("within(0.01, differentiate(1, xplus1, 1))")
-console.log(within(0.01, differentiate(1, xplus1, 1)))
-console.log("within(0.01, differentiate(1, square, 1))")
-console.log(within(0.01, differentiate(1, square, 1)))
+console.log("Case 1: Init h0: 0.01, function: add1, point: 1")
+console.log("rst: " + within(0.01, differentiate(1, xplus1, 1)))
+console.log("Case 2: Init h0: 0.01, function: square, point: 1")
+console.log("rst: " + within(0.01, differentiate(1, square, 1)))
 console.log()
 
 function easyintegrate(f, a, b) {
@@ -196,7 +171,3 @@ function zip2(consas, consbt) {
     }
     return cons({a: consas.obj, b:consbt.obj}, zip2(consas.list, consbt.list))
 }
-
-console.log("within(0.01, integrate(square, 0, 1, 0))")
-console.log(within(0.01, integrate(square, 0, 1, 0)))
-console.log()

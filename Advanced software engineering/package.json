@@ -1,0 +1,7 @@
+{
+    "name": "numerical_differentiation",
+    "version": "1.0.0",
+    "description": "Node.js on Docker",
+    "author": "Jiale Qian ",
+    "main": "main.js"
+}
