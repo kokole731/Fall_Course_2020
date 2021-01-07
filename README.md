@@ -1,1 +1,3 @@
-# 2020 fall course, School of computer science, Fudan University
+# 2020 Fall Course
+
+School of computer science, Fudan University
